@@ -32,23 +32,23 @@ var attempts = 0;
 function checkGuess() {
     var guess = document.getElementById('guessInput').value;
     var result = document.getElementById('result');
-    
     if(guess.toLowerCase() === randomSkylander.name.toLowerCase()) {
         result.textContent = "Correct! The Skylander was " + randomSkylander.name;
         displaySkylanderImage(randomSkylander);
     } else {
         attempts++;
         result.textContent = "Incorrect. Try again!";
-        
         if(attempts >= 2) {
-            result.textContent += " Hint: The Skylander's catchphrase is '" + randomSkylander.catchphrase + "'.";
-            
+            result.textContent = "Hint: The Skylander's catchphrase is '" + randomSkylander.catchphrase + "'.";
             if(attempts >= 4) {
-                result.textContent += " Another hint: The Skylander's element is " + randomSkylander.element + ".";
+                result.textContent = "Another hint: The Skylander's element is " + randomSkylander.element + ".";
             }
-            
             if(attempts >= 6) {
-                result.textContent += " Final hint: The Skylander's name starts with '" + randomSkylander.name.charAt(0) + "'.";
+                result.textContent = "Final hint: The Skylander's name starts with '" + randomSkylander.name.charAt(0) + "'.";
+            }
+            if(attempts >= 8) {
+                result.textContent = "Another hint: Here is an image of the Skylander.";
+                displaySkylanderImage(randomSkylander);
             }
         }
     }
