@@ -1,39 +1,78 @@
 body {
-    background: #000 url('galaxy.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: #ffffff;
-  }
+  background: #000 url('galaxy.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #ffffff;
+  /* Added styles */
+  font-family: 'Arial', sans-serif; /* Set a default font for the website */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+}
   
   h1 {
     font-size: 2.5em;
     text-align: center;
     padding-top: 15%;
-  }
+    background-color: rgba(65, 105, 225); /* semi-transparent background */
+    border-radius: 12px; /* rounded corners */
+    padding: 20px; /* padding around text */
+}
   
-  p {
-    font-size: 1.2em;
-    text-align: center;
-  }
+p {
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgba(65, 105, 225); /* semi-transparent background */
+  border-radius: 12px; /* rounded corners */
+  padding: 20px; /* padding around text */
+}
   
-  #guessInput {
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 1em;
-  }
+#guessInput {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1em;
+  /* Added styles */
+  width: 80%; /* Set a width */
+  max-width: 600px; /* Set a maximum width */
+  border: none; /* Remove border */
+  border-radius: 12px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Shadow effect */
+}
   
-  button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4169e1;
-    color: #000000;
-    border: none;
-  }
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: rgba(65, 105, 225); /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  /* Added styles */
+  border-radius: 4px; /* Slightly rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* More spacing between letters */
+  transition: all 0.5s ease; /* Smooth transition for hover effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .15); /* Slight shadow for 3D effect */
+}
+
+button:hover {
+  background-color: rgb(97, 129, 224); /* Darker green when hovered */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3); /* Larger shadow for 3D effect */
+  transform: translateY(-2px); /* Slight move upwards */
+}
+
+button:active {
+  transform: translateY(1px); /* Return to original position when clicked */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .15); /* Return to original shadow */
+}
   
   #skylanderTable {
     margin: 0 auto;
@@ -42,4 +81,7 @@ body {
   #skylanderTable img {
     width: 250px;   /* adjust as needed */
     height: auto;
-  }
+    /* Added styles */
+    border: 5px solid #4169e1; /* border around the image */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* shadow effect */
+}

@@ -23,6 +23,14 @@ var skylanders = [
     {name: "Drill Sergeant", element: "Tech", catchphrase: "Licensed to Drill!", imageUrl: "drillsergeant.webp"},
     {name: "Drobot", element: "Tech", catchphrase: "Blink and Destroy!", imageUrl: "drobot.webp"},
     {name: "Trigger Happy", element: "Tech", catchphrase: "No Gold, No Glory!", imageUrl: "triggerhappy.webp"},
+    {name: "Chop Chop", element: "Undead", catchphrase: "Slice and Dice!", imageUrl: "chopchop.webp"},
+    {name: "Cynder", element: "Undead", catchphrase: "Volts and Lightning!", imageUrl: "cynder.webp"},
+    {name: "Ghost Roaster", element: "Undead", catchphrase: "No Chain, No Gain! Ahahahahahaaa!", imageUrl: "ghostroaster.webp"},
+    {name: "Hex", element: "Undead", catchphrase: "Fear the Dark!", imageUrl: "hex.webp"},
+    {name: "Gill Grunt", element: "Water", catchphrase: "Fear the Fish!", imageUrl: "gillgrunt.webp"},
+    {name: "Slam Bam", element: "Water", catchphrase: "Armed and Dangerous!", imageUrl: "slambam.webp"},
+    {name: "Wham-Shell", element: "Water", catchphrase: "Brace for the Mace!", imageUrl: "whamshell.webp"},
+    {name: "Zap", element: "Water", catchphrase: "Ride the Lightning!", imageUrl: "zap.webp"},
 
 ];
 
@@ -33,7 +41,7 @@ function checkGuess() {
     var guess = document.getElementById('guessInput').value;
     var result = document.getElementById('result');
     if(guess.toLowerCase() === randomSkylander.name.toLowerCase()) {
-        result.textContent = "Correct! The Skylander was " + randomSkylander.name;
+        result.textContent = "CORRECT! THE SKYLANDER WAS: " + randomSkylander.name;
         displaySkylanderImage(randomSkylander);
     } else {
         attempts++;
@@ -44,10 +52,10 @@ function checkGuess() {
                 result.textContent = "Another hint: The Skylander's element is " + randomSkylander.element + ".";
             }
             if(attempts >= 6) {
-                result.textContent = "Final hint: The Skylander's name starts with '" + randomSkylander.name.charAt(0) + "'.";
+                result.textContent = "Another hint: The Skylander's name starts with '" + randomSkylander.name.charAt(0) + "'.";
             }
             if(attempts >= 8) {
-                result.textContent = "Another hint: Here is an image of the Skylander.";
+                result.textContent = "Final hint: Here is an image of the Skylander.";
                 displaySkylanderImage(randomSkylander);
             }
         }
@@ -56,9 +64,11 @@ function checkGuess() {
 
 function displaySkylanderImage(skylander) {
     var table = document.getElementById('skylanderTable');
-    var row = table.insertRow(0);
-    var cell = row.insertCell(0);
-    var img = document.createElement('img');
-    img.src = skylander.imageUrl;
-    cell.appendChild(img);
+    if (!table.hasChildNodes()) { // check if there are no child nodes in the table
+        var row = table.insertRow(0);
+        var cell = row.insertCell(0);
+        var img = document.createElement('img');
+        img.src = skylander.imageUrl;
+        cell.appendChild(img);
+    }
 }
