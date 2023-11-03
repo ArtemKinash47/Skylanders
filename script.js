@@ -31,6 +31,23 @@ var skylanders = [
     {name: "Slam Bam", element: "Water", catchphrase: "Armed and Dangerous!", imageUrl: "slambam.webp", game: "Skylanders: Spyro's Adventures", type: "skylander"},
     {name: "Wham-Shell", element: "Water", catchphrase: "Brace for the Mace!", imageUrl: "whamshell.webp", game: "Skylanders: Spyro's Adventures", type: "skylander"},
     {name: "Zap", element: "Water", catchphrase: "Ride the Lightning!", imageUrl: "zap.webp", game: "Skylanders: Spyro's Adventures", type: "skylander"},
+    { name: "Jet-Vac", element: "Air", catchphrase: "Hawk and Awe!", imageUrl: "jetvac.webp", game: "Skylanders: Giants", type: "skylander" },
+    { name: "Swarm", element: "Air", catchphrase: "Bring the Sting!", imageUrl: "swarm.webp", game: "Skylanders: Giants", type: "skylander" },
+    { name: "Crusher", element: "Earth", catchphrase: "It's Crush Hour!", imageUrl: "crusher.webp", game: "Skylanders: Giants", type: "skylander" },
+    { name: "Flashwing", element: "Earth", catchphrase: "Blinded by the Light!", imageUrl: "flashwing.webp", game: "Skylanders: Giants", type: "skylander" },
+    {name: "Hot Dog", element: "Fire", catchphrase: "See Spot Burn!", imageUrl: "hotdog.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Hot Head", element: "Fire", catchphrase: "Hey! I'm On Fire!", imageUrl: "hothead.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Shroomboom", element: "Life", catchphrase: "He Shoots, He Spores!", imageUrl: "shroomboom.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Tree Rex", element: "Life", catchphrase: "Be Afraid of the Bark!", imageUrl: "treerex.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Pop Fizz", element: "Magic", catchphrase: "The Motion of the Potion!", imageUrl: "popfizz.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Ninjini", element: "Magic", catchphrase: "Any Last Wishes?", imageUrl: "ninjini.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Bouncer", element: "Tech", catchphrase: "Deal with the Wheel!", imageUrl: "bouncer.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Sprocket", element: "Tech", catchphrase: "The Fix Is In!", imageUrl: "sprocket.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Eye-Brawl", element: "Undead", catchphrase: "I've Got My Eye On You!", imageUrl: "eyebrawl.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Fright Rider", element: "Undead", catchphrase: "Fear the Spear!", imageUrl: "frightrider.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Chill", element: "Water", catchphrase: "Stay Cool!", imageUrl: "chill.webp", game: "Skylanders: Giants", type: "skylander"},
+{name: "Thumpback", element: "Water", catchphrase: "Hail to the Whale!", imageUrl: "thumpback.webp", game: "Skylanders: Giants", type: "skylander"},
+
 
 ];
 
@@ -40,27 +57,27 @@ var attempts = 0;
 function checkGuess() {
     var guess = document.getElementById('guessInput').value;
     var result = document.getElementById('result');
-    if(guess.toLowerCase() === randomSkylander.name.toLowerCase()) {
+    if (guess.toLowerCase() === randomSkylander.name.toLowerCase()) {
         result.textContent = "CORRECT! THE SKYLANDER WAS: " + randomSkylander.name;
         displaySkylanderImage(randomSkylander);
     } else {
         attempts++;
         result.textContent = "Incorrect. Try again!";
-        if(attempts >= 2) {
+        if (attempts >= 2) {
             result.textContent = "Hint: The Skylander's type is " + randomSkylander.type + ".";
-            if(attempts >= 4) {
+            if (attempts >= 4) {
                 result.textContent = "Another hint: The Skylander's element is " + randomSkylander.element + ".";
             }
-            if(attempts >= 6) {
-                result.textContent = "Another hint: The Skylander's game where he was created  " +  randomSkylander.game  +    ".";
+            if (attempts >= 6) {
+                result.textContent = "Another hint: The Skylander's game where he was created  " + randomSkylander.game + ".";
             }
-            if(attempts >= 8) {
+            if (attempts >= 8) {
                 result.textContent = "Another hint: Skylander's catchphrase is: " + randomSkylander.catchphrase + ".";
             }
-            if(attempts >= 10) {
+            if (attempts >= 10) {
                 result.textContent = "Another hint: First letter of skylander's name is " + randomSkylander.name.charAt(0) + ".";
             }
-            if(attempts >= 12) {
+            if (attempts >= 12) {
                 result.textContent = "Final hint: Skylander's image looks like this: ";
                 displaySkylanderImage(randomSkylander)
             }
